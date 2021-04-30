@@ -1,0 +1,28 @@
+<section class="container_table">
+    <table class="table_users">
+        <thead class="table_users_tittle">
+            <tr>
+                <th>Id</th>
+                <th>Rol</th>
+                <th>Nombre</th>
+                <th>Activo</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody  class="table_users_data">
+            <tr *ngFor="let users of dataUsers">
+                <td>{{ users.ID_USUARIO }}</td>
+                <td>{{ users.NOMBREROL }}</td>
+                <td>{{ users.NOMBRE }}</td>
+                <td *ngIf="users.ACTIVO == 1">Activo</td>
+                <td *ngIf="users.ACTIVO == 2">Inactivo</td>
+                <td ><button class="button_editar" (click)="editUser(users.ID_USUARIO)"> Editar </button></td>
+                <td><button class="button_eliminar" type="button" (click)="deleteUser(users.ID_USUARIO)">x</button></td>
+                
+            </tr>
+
+        </tbody>
+
+    </table>
+</section>
